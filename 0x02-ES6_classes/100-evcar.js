@@ -1,4 +1,4 @@
-import Car from './10-car.js';
+import Car from './10-car.js'; // eslint-disable-line
 
 export default class EVCar extends Car {
   constructor(brand, motor, color, range) {
@@ -10,7 +10,8 @@ export default class EVCar extends Car {
     }
   }
 
-  cloneCar() {
-    return new Car();
+  static get [Symbol.species]() {
+    console.log('.../.../...');
+    return Car;
   }
 }
