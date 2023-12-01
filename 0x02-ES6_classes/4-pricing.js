@@ -1,13 +1,13 @@
-import Currency from '3-currency.js';
+import Currency from './3-currency.js'; // eslint-disable-line
 
 export default class Pricing {
   constructor(amount, currency) {
-    if (Number.isNumber(amount)) {
+    if (Number.isInteger(amount) || amount === undefined) {
       this._amount = amount;
     } else {
       throw (new TypeError('Amount must be a number'));
     }
-    if (currency instanceof Currency) {
+    if (currency instanceof Currency || currency === undefined) {
       this._currency = currency;
     } else {
       throw (new TypeError('Currency must be a Currency'));
@@ -32,6 +32,8 @@ export default class Pricing {
 
   set currency(currency) {
     if (currency instanceof Currency) {
+      this._currency = currency;
+    } else {
       throw (new TypeError('Currency must be a Currency'));
     }
   }
