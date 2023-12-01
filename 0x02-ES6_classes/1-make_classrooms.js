@@ -1,5 +1,4 @@
-/* eslint-disable */
-import ClassRoom from './0-classroom.js';
+import ClassRoom from './0-classroom.js'; // eslint-disable-line
 
 export default function initializeRooms() {
   const classRooms = [];
